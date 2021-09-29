@@ -9,5 +9,8 @@
 		<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <Folder Include="NewFolder\" />
+	</ItemGroup>
 
 </Project>

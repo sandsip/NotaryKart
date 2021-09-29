@@ -1,0 +1,30 @@
+﻿@using NotaryKart.Helpers
+@inject HelperService helperService
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+
+
+    string segements = $"{this.ViewContext.RouteData.Values["controller"]}/{this.ViewContext.RouteData.Values["action"]}";
+    @(Html.Raw(helperService.InjectMetaInfo(segements)));
+    segements = null;
+
+    //var reqUrl = Request.HttpContext.Request;
+    //var urlHost = reqUrl.Host;
+    //var urlPath = reqUrl.Path;
+    //var urlQueryString = reqUrl.QueryString;
+    //if (urlQueryString == null)
+    //{
+    //    ViewBag.URL = urlHost + urlPath;
+    //}
+    //else
+    //{
+    //    ViewBag.URL = urlHost + urlPath + urlQueryString;
+    //}
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Web Page</h1>
+    <p>Learn about <a href="">building Web apps with ASP.NET Core</a>.</p>
+</div>

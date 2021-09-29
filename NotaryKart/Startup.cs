@@ -47,19 +47,19 @@ namespace NotaryKart
             app.UseRouting();
 
             app.UseAuthorization();
-            
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "areas",
-                    pattern: "{area}/{controller=Login}/{action=Index}/{id?}");
-            });
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Home}/{action=Index}/{id?}");
+            //});
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "areas",
+            //        pattern: "{area}/{controller=Login}/{action=Index}/{id?}");
+            //});
             //app.UseMvc(configureRoutes =>
             //{
             //    configureRoutes.MapRoute(
@@ -67,6 +67,20 @@ namespace NotaryKart
             //      template: "{area}/{controller}/{action}/{id?}"
             //    );
             //});
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapAreaControllerRoute(
+                   name: "Admin",
+                   areaName: "Admin",
+                   pattern: "Admin/{controller=Login}/{action=Index}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapRazorPages();
+            });
         }
     }
 }

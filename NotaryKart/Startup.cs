@@ -48,6 +48,7 @@ namespace NotaryKart
 
             app.UseAuthorization();
 
+            #region OLDCodeRoute
             //app.UseEndpoints(endpoints =>
             //{
             //    endpoints.MapControllerRoute(
@@ -60,14 +61,16 @@ namespace NotaryKart
             //        name: "areas",
             //        pattern: "{area}/{controller=Login}/{action=Index}/{id?}");
             //});
-            //app.UseMvc(configureRoutes =>
-            //{
-            //    configureRoutes.MapRoute(
-            //      name: "areas",
-            //      template: "{area}/{controller}/{action}/{id?}"
-            //    );
-            //});
+            ////app.UseMvc(configureRoutes =>
+            ////{
+            ////    configureRoutes.MapRoute(
+            ////      name: "areas",
+            ////      template: "{area}/{controller}/{action}/{id?}"
+            ////    );
+            ////});
+            #endregion
 
+            #region NewCodeRoute
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapAreaControllerRoute(
@@ -81,6 +84,7 @@ namespace NotaryKart
 
                 endpoints.MapRazorPages();
             });
+            #endregion
         }
     }
 }
